@@ -1,0 +1,45 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 90px;
+}
+.navbar-links{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+    
+}
+.navbar a{
+    text-decoration: none;
+    color: #424242;
+}
+
+.ellipse{
+    position: absolute;
+    right: 146px;
+}
+.vector{
+    position: absolute;
+    top: 57px;
+    right: 154px;
+}
+.profile{
+    height: 36px;
+    width: 36px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.active{
+    color:#1262AE !important
+}
+
+.user-item .username {
+    display: none;
+  }
+  
+  .user-item:hover .username {
+    display: block; /* or block, depending on layout */
+  }
+  

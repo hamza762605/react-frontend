@@ -1,0 +1,142 @@
+.hero {
+    position: relative;
+    height: 640px;
+    background-image: linear-gradient(to right, #114F8B, #2A9AD7);
+}
+
+.hero-image {
+    height: 640px;
+    width: 100%;
+    overflow: hidden;
+}
+.hero-search-image{
+  width: 100%;
+  
+}
+
+.hero .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero .content h1 {
+    font-size: 61px;
+    font-family: 'MyFont', sans-serif;
+    font-weight: 400;
+}
+
+.hero .content p {
+    font-size: 24px;
+}
+
+.flight-search {
+    background: #FFFFFF;
+    padding: 15px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 1160px; 
+    margin-inline: auto;
+  }
+  
+  .flight-search h2 {
+    font-weight: 700;
+    color: #303030;
+  }
+  
+  .flight-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #555;
+  }
+  
+  .flight-form {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 20%;
+    min-width: 200px;
+    position: relative;
+  }
+  
+  .input-group label {
+    background-color: #ffffff;
+    color: #00000099;
+    position: absolute;
+    bottom: 34px;
+    font-size: small;
+    left: 10px;
+  }
+
+  input::placeholder{
+    color: #000000DE;
+  }
+  
+  .input-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .search-button {
+    background: #f5a623;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    flex: 1 1 15%;
+    min-width: 160px;
+    align-self: flex-end;
+  }
+  
+  .search-button:hover {
+    background: #e59400;
+  }
+  .height-360{
+    height: 360px !important;
+    overflow: hidden;
+  }
+  .text-start{
+    position: relative;
+    right: 275px;
+  }
+
+  input::file-selector-button{
+    height: 50px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    z-index: 999999;
+  }
+
+  .file-container{
+    border: 1px solid black;
+    border-style: dotted;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  .file-container img{
+    height: 50px;
+    width: 50px;
+    margin-inline: auto;
+  }
