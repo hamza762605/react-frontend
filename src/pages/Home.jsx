@@ -76,30 +76,30 @@ export default function Home() {
     ]);
 
     const [popularDestinations, setPopularDestinations] = useState([
-        // {
-        //     id: 1,
-        //     name: 'Paris',
-        //     image: paris,
-        //     price: '$699'
-        // },
-        // {
-        //     id: 2,
-        //     name: 'Greece',
-        //     image: greece,
-        //     price: '$1079'
-        // },
-        // {
-        //     id: 3,
-        //     name: 'Norway',
-        //     image: norway,
-        //     price: '$895'
-        // },
-        // {
-        //     id: 4,
-        //     name: 'Tuscany',
-        //     image: tuscany,
-        //     price: '$1245'
-        // },
+        {
+            id: 1,
+            name: 'Paris',
+            image: paris,
+            price: '$699'
+        },
+        {
+            id: 2,
+            name: 'Greece',
+            image: greece,
+            price: '$1079'
+        },
+        {
+            id: 3,
+            name: 'Norway',
+            image: norway,
+            price: '$895'
+        },
+        {
+            id: 4,
+            name: 'Tuscany',
+            image: tuscany,
+            price: '$1245'
+        },
     ]);
     const [recommendedDestinations, setRecommendedDestinations] = useState([
         {
@@ -166,22 +166,22 @@ export default function Home() {
         },
     ]);
 
-    const allProducts = () =>{
-        axios.get('https://fakestoreapi.com/products').then((response)=>{
-            const firstFour = response.data.slice(0, 4);
-            setPopularDestinations(firstFour)
-        }).catch((err)=>{
-            console.log(err,'err');
-        })
-    }
-     function mergeArrays(...arrays) {
-  return arrays.flat(Infinity);
-}
-const merged = mergeArrays([1, 2], [3, 4], [5, [6, 7],[8,9]]);
-console.log(merged);
-    useEffect(()=>{
-        allProducts()
-    },[])
+//     const allProducts = () =>{
+//         axios.get('https://fakestoreapi.com/products').then((response)=>{
+//             const firstFour = response.data.slice(0, 4);
+//             setPopularDestinations(firstFour)
+//         }).catch((err)=>{
+//             console.log(err,'err');
+//         })
+//     }
+//      function mergeArrays(...arrays) {
+//   return arrays.flat(Infinity);
+// }
+// const merged = mergeArrays([1, 2], [3, 4], [5, [6, 7],[8,9]]);
+// console.log(merged);
+//     useEffect(()=>{
+//         allProducts()
+//     },[])
 
     return (
         <>

@@ -12,9 +12,10 @@ const Todo = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const fetchTasks = () => {
-    axios.get('http://localhost:5000/todo/get/tasks')
+    axios
+      .get("http://localhost:5000/todo/get/tasks")
       .then((res) => setTasks(res.data.tasks))
-      .catch((err) => console.error('Error fetching tasks:', err));
+      .catch((err) => console.error("Error fetching tasks:", err));
   };
 
   useEffect(() => {
@@ -30,12 +31,13 @@ const Todo = () => {
   };
 
   const addTask = () => {
-    axios.post('http://localhost:5000/todo/add/task', inputs)
+    axios
+      .post("http://localhost:5000/todo/add/task", inputs)
       .then(() => {
         fetchTasks();
-        setInputs({ task: '', date: '', status: false });
+        setInputs({ task: "", date: "", status: false });
       })
-      .catch((error) => console.error('Error adding task:', error));
+      .catch((error) => console.error("Error adding task:", error));
   };
 
   const handleEdit = (_id) => {
@@ -43,14 +45,15 @@ const Todo = () => {
     setInputs({
       _id: task._id,
       task: task.task,
-      date: task.date ? new Date(task.date).toISOString().split('T')[0] : '',
+      date: task.date ? new Date(task.date).toISOString().split("T")[0] : "",
       status: task.status,
     });
     setIsModalOpen(true);
   };
 
   const updateTask = () => {
-    axios.put(`http://localhost:5000/todo/update/task/${inputs._id}`, inputs)
+    axios
+      .put(`http://localhost:5000/todo/update/task/${inputs._id}`, inputs)
       .then(() => {
         fetchTasks();
         closeModal();
@@ -59,9 +62,10 @@ const Todo = () => {
   };
 
   const handleDelete = (_id) => {
-    axios.delete(`http://localhost:5000/todo/delete/task/${_id}`)
+    axios
+      .delete(`http://localhost:5000/todo/delete/task/${_id}`)
       .then(() => fetchTasks())
-      .catch((err) => console.error('Error deleting task:', err));
+      .catch((err) => console.error("Error deleting task:", err));
   };
 
   const closeModal = () => {
@@ -86,7 +90,9 @@ const Todo = () => {
           <tbody>
             {tasks.length === 0 ? (
               <tr>
-                <td colSpan="4" style={{ textAlign: "center" }}>No entries yet.</td>
+                <td colSpan="4" style={{ textAlign: "center" }}>
+                  No entries yet.
+                </td>
               </tr>
             ) : (
               tasks.map((task) => (
@@ -95,8 +101,18 @@ const Todo = () => {
                   <td>{task.date}</td>
                   <td>{task.status ? "Completed" : "Pending"}</td>
                   <td>
-                    <button className="bg-warning" onClick={() => handleEdit(task._id)}>Edit</button>
-                    <button className="bg-danger" onClick={() => handleDelete(task._id)}>Delete</button>
+                    <button
+                      className="bg-warning"
+                      onClick={() => handleEdit(task._id)}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className="bg-danger"
+                      onClick={() => handleDelete(task._id)}
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))
@@ -108,15 +124,31 @@ const Todo = () => {
         <div className="flex-col to-do">
           <label>
             Task:
-            <input type="text" name="task" placeholder="Enter Task" value={inputs.task} onChange={handleChange} />
+            <input
+              type="text"
+              name="task"
+              placeholder="Enter Task"
+              value={inputs.task}
+              onChange={handleChange}
+            />
           </label>
           <label>
             Date:
-            <input type="date" name="date" value={inputs.date} onChange={handleChange} />
+            <input
+              type="date"
+              name="date"
+              value={inputs.date}
+              onChange={handleChange}
+            />
           </label>
           <label>
             Is Completed?:
-            <input type="checkbox" name="status" checked={inputs.status} onChange={handleChange} />
+            <input
+              type="checkbox"
+              name="status"
+              checked={inputs.status}
+              onChange={handleChange}
+            />
           </label>
         </div>
         <button onClick={addTask}>Add Task</button>
@@ -126,11 +158,27 @@ const Todo = () => {
         <div className="modal-overlay">
           <div className="modal">
             <h3>Edit Task</h3>
-            <input type="text" name="task" value={inputs.task} onChange={handleChange} placeholder="Enter Task" />
-            <input type="date" name="date" value={inputs.date} onChange={handleChange} />
+            <input
+              type="text"
+              name="task"
+              value={inputs.task}
+              onChange={handleChange}
+              placeholder="Enter Task"
+            />
+            <input
+              type="date"
+              name="date"
+              value={inputs.date}
+              onChange={handleChange}
+            />
             <label>
               Is Completed?:
-              <input type="checkbox" name="status" checked={inputs.status} onChange={handleChange} />
+              <input
+                type="checkbox"
+                name="status"
+                checked={inputs.status}
+                onChange={handleChange}
+              />
             </label>
             <button onClick={updateTask}>Update Task</button>
             <button onClick={closeModal}>Cancel</button>

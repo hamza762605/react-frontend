@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-import '../assets/css/page-auth.css';
-import '../assets/css/core.css';
-import '../assets/css/theme-default.css';
+// import '../assets/css/page-auth.css';
+// import '../assets/css/core.css';
+// import '../assets/css/theme-default.css';
 
 const Register = () => {
     const navigate = useNavigate();

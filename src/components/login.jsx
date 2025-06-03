@@ -1,6 +1,6 @@
-import '../assets/css/page-auth.css';
-import '../assets/css/core.css';
-import '../assets/css/theme-default.css';
+// import '../assets/css/page-auth.css';
+// import '../assets/css/core.css';
+// import '../assets/css/theme-default.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
